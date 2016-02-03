@@ -1,0 +1,43 @@
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.XML
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\bin\Debug\FSharp.Core.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\bin\Debug\FSharp.Core.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\obj\Debug\NoSQLPOC.Functional.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\NoSQLPOC.Functional\obj\Debug\NoSQLPOC.Functional.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.XML
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\NoSQLPOC.Functional.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\FSharp.Core.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\FSharp.Core.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\obj\Debug\NoSQLPOC.Functional.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\obj\Debug\NoSQLPOC.Functional.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.Data.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.Data.Linq.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Crc32C.NET.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\LZ4.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Snappy.NET.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.Data.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Cassandra.Data.Linq.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Crc32C.NET.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Functional\bin\Debug\Snappy.NET.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\NoSqlPoc.Functional.XML
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\NoSqlPoc.Functional.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\NoSqlPoc.Functional.pdb
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.Data.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.Data.Linq.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Crc32C.NET.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\FSharp.Core.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\LZ4.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Snappy.NET.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.Data.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Cassandra.Data.Linq.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Crc32C.NET.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\FSharp.Core.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\bin\Debug\Snappy.NET.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\obj\Debug\NoSqlPoc.Functional.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Functional\obj\Debug\NoSqlPoc.Functional.pdb

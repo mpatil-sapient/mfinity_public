@@ -1,0 +1,18 @@
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\NoSQLPOC.DAL.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\NoSQLPOC.DAL.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\obj\Debug\NoSQLPOC.DAL.csprojResolveAssemblyReference.cache
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\obj\Debug\NoSQLPOC.DAL.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\obj\Debug\NoSQLPOC.DAL.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\NoSQLPOC.DAL.dll.config
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Cassandra.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Crc32C.NET.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\LZ4.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\NoSQLPOC.Model.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Snappy.NET.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\NoSQLPOC.Model.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Cassandra.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Crc32C.NET.xml
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.DAL\bin\Debug\Snappy.NET.xml
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.DAL\obj\Debug\NoSqlPoc.Dal.csprojResolveAssemblyReference.cache
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.DAL\obj\Debug\NoSqlPoc.DAL.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.DAL\obj\Debug\NoSqlPoc.DAL.pdb

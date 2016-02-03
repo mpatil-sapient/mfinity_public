@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Code.Cake</name>
+    </assembly>
+    <members>
+        <member name="T:Code.Cake.AddPathAttribute">
+            <summary>
+            Decorates <see cref="T:Code.Cake.CodeCakeHost"/> classes.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.AddPathAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new <see cref="T:Code.Cake.AddPathAttribute"/> with a pattern. Examples: 
+            <code>[AddPath( "%LOCALAPPDATA%/NuGet" )]</code> or <code>[AddPath( "packages/**/tools/**" )]</code>.
+            </summary>
+            <param name="pattern">
+            The pattern that will be expansed in PATH environement variable.
+            It it relative to the Solution directory.
+            </param>
+        </member>
+        <member name="P:Code.Cake.AddPathAttribute.Pattern">
+            <summary>
+            Gets the pattern that will be expansed in PATH environement variable.
+            It it relative to the Solution directory.
+            </summary>
+        </member>
+        <member name="T:Code.Cake.BuildScriptHost">
+            <summary>
+            The script host used to execute Cake scripts.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.BuildScriptHost.#ctor(Cake.Core.ICakeEngine,Cake.Core.ICakeContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Code.Cake.BuildScriptHost"/> class.
+            </summary>
+            <param name="engine">The engine.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Code.Cake.BuildScriptHost.RunTarget(System.String)">
+            <summary>
+            This can never be called.
+            </summary>
+            <param name="target">The target to run.</param>
+            <returns>The resulting report.</returns>
+        </member>
+        <member name="P:Code.Cake.CakeArguments.Arguments">
+            <summary>
+            Gets the arguments.
+            </summary>
+            <value>The arguments.</value>
+        </member>
+        <member name="M:Code.Cake.CakeArguments.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Code.Cake.CakeArguments"/> class.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.CakeArguments.SetArguments(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes the argument list.
+            </summary>
+            <param name="arguments">The arguments.</param>
+        </member>
+        <member name="M:Code.Cake.CakeArguments.HasArgument(System.String)">
+            <summary>
+            Determines whether or not the specified argument exist.
+            </summary>
+            <param name="name">The argument name.</param>
+            <returns>
+              <c>true</c> if the argument exist; otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Code.Cake.CakeArguments.GetArgument(System.String)">
+            <summary>
+            Gets an argument.
+            </summary>
+            <param name="name">The argument name.</param>
+            <returns>The argument value.</returns>
+        </member>
+        <member name="P:Code.Cake.CakeConsole.ForegroundColor">
+            <summary>
+            Gets or sets the foreground color.
+            </summary>
+            <value>The foreground color.</value>
+        </member>
+        <member name="P:Code.Cake.CakeConsole.BackgroundColor">
+            <summary>
+            Gets or sets the background color.
+            </summary>
+            <value>The background color.</value>
+        </member>
+        <member name="M:Code.Cake.CakeConsole.Write(System.String,System.Object[])">
+            <summary>
+            Writes the text representation of the specified array of objects to the
+            console output using the specified format information.
+            </summary>
+            <param name="format">A composite format string</param>
+            <param name="arg">An array of objects to write using format.</param>
+        </member>
+        <member name="M:Code.Cake.CakeConsole.WriteLine(System.String,System.Object[])">
+            <summary>
+            Writes the text representation of the specified array of objects, followed
+            by the current line terminator, to the console output using the specified
+            format information.
+            </summary>
+            <param name="format">A composite format string</param>
+            <param name="arg">An array of objects to write using format.</param>
+        </member>
+        <member name="M:Code.Cake.CakeConsole.ResetColor">
+            <summary>
+            Sets the foreground and background console colors to their defaults.
+            </summary>
+        </member>
+        <member name="T:Code.Cake.CodeCakeApplication">
+            <summary>
+            Crappy implementation: it is just a POC.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.CodeCakeApplication.#ctor(System.String,System.Reflection.Assembly[])">
+            <summary>
+            Initializes a new CodeCakeApplication (DNX context).
+            </summary>
+            <param name="solutionDirectory">Solution directory: will become the <see cref="P:Cake.Core.ICakeEnvironment.WorkingDirectory"/>.</param>
+            <param name="codeContainers">Assemblies that may contain concrete <see cref="T:Code.Cake.CodeCakeHost"/> objects.</param>
+        </member>
+        <member name="M:Code.Cake.CodeCakeApplication.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.String)">
+            <summary>
+            Initializes a new CodeCakeApplication.
+            </summary>
+            <param name="codeContainers">
+            Assemblies that may contain concrete <see cref="T:Code.Cake.CodeCakeHost"/> objects.
+            The <see cref="M:System.Reflection.Assembly.GetEntryAssembly"/> is always considered, this is why it can be let to null or be empty.
+            </param>
+            <param name="solutionDirectory">
+            Solution directory: will become the <see cref="P:Cake.Core.ICakeEnvironment.WorkingDirectory"/>.
+            When null, if the <see cref="M:System.Reflection.Assembly.GetEntryAssembly"/> is not null we consider it running in "Solution/Builder/bin/[Configuration}" folder:
+            we compute the solution directory by removing 3 sub folders.
+            </param>
+        </member>
+        <member name="M:Code.Cake.CodeCakeApplication.Run(System.String[])">
+            <summary>
+            Runs the application.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>0 on success.</returns>
+        </member>
+        <member name="P:Code.Cake.CodeCakeApplication.AvailableBuilds">
+            <summary>
+            Gets a mutable dictionary of build objects.
+            </summary>
+        </member>
+        <member name="T:Code.Cake.CodeCakeBuildTypeDescriptor">
+            <summary>
+            Describes a Build class.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.CodeCakeBuildTypeDescriptor.#ctor(System.Type)">
+            <summary>
+            initializes a new <see cref="T:Code.Cake.CodeCakeBuildTypeDescriptor"/>.
+            </summary>
+            <param name="t">The type of the build object.</param>
+        </member>
+        <member name="P:Code.Cake.CodeCakeBuildTypeDescriptor.Type">
+            <summary>
+            Gets the type of the build object.
+            </summary>
+        </member>
+        <member name="P:Code.Cake.CodeCakeBuildTypeDescriptor.AdditionnalPatternPaths">
+            <summary>
+            Gets a set of pattern paths that should be available when executing script.
+            </summary>
+        </member>
+        <member name="T:Code.Cake.CodeCakeHost">
+            <summary>
+            Base class for build objects.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.CodeCakeHost.#ctor">
+            <summary>
+            Initializes a new host.
+            </summary>
+        </member>
+        <member name="P:Code.Cake.CodeCakeHost.Cake">
+            <summary>
+            Gets the Cake context.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.CodeCakeHost.Setup(System.Action)">
+            <summary>
+            Registers the Setup operation.
+            </summary>
+            <param name="action">Action to execute.</param>
+        </member>
+        <member name="M:Code.Cake.CodeCakeHost.Task(System.String)">
+            <summary>
+            Registers a named task.
+            </summary>
+            <param name="name">Name of the task.</param>
+            <returns>A task builder object.</returns>
+        </member>
+        <member name="M:Code.Cake.CodeCakeHost.Teardown(System.Action)">
+            <summary>
+            Registers the Teardown action.
+            </summary>
+            <param name="action">Action to execute.</param>
+        </member>
+        <member name="T:Code.Cake.ICodeCakeHost">
+            <summary>
+            Defines the host for build ojects.
+            </summary>
+        </member>
+        <member name="P:Code.Cake.ICodeCakeHost.Cake">
+            <summary>
+            Gets the Cake context.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.ICodeCakeHost.Task(System.String)">
+            <summary>
+            Registers a named task.
+            </summary>
+            <param name="name">Name of the task.</param>
+            <returns>A task builder object.</returns>
+        </member>
+        <member name="M:Code.Cake.ICodeCakeHost.Setup(System.Action)">
+            <summary>
+            Registers the Setup operation.
+            </summary>
+            <param name="action">Action to execute.</param>
+        </member>
+        <member name="M:Code.Cake.ICodeCakeHost.Teardown(System.Action)">
+            <summary>
+            Registers the Teardown action.
+            </summary>
+            <param name="action">Action to execute.</param>
+        </member>
+        <member name="T:Code.Cake.MutableCakeEnvironment">
+            <summary>
+            Represents the environment Cake operates in. This mutable implementation allows the PATH environment variable
+            to be dynamically modified. Except this new <see cref="P:Code.Cake.MutableCakeEnvironment.EnvironmentPaths"/> this is the same as the <see cref="T:Cake.Core.CakeEnvironment"/>
+            provided by Cake.
+            </summary>
+        </member>
+        <member name="P:Code.Cake.MutableCakeEnvironment.WorkingDirectory">
+            <summary>
+            Gets or sets the working directory.
+            </summary>
+            <value>The working directory.</value>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Code.Cake.MutableCakeEnvironment"/> class.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.Is64BitOperativeSystem">
+            <summary>
+            Gets whether or not the current operative system is 64 bit.
+            </summary>
+            <returns>
+            Whether or not the current operative system is 64 bit.
+            </returns>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.IsUnix">
+            <summary>
+            Determines whether the current machine is running Unix.
+            </summary>
+            <returns>
+            Whether or not the current machine is running Unix.
+            </returns>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.GetSpecialPath(Cake.Core.IO.SpecialPath)">
+            <summary>
+            Gets a special path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            A <see cref="T:Cake.Core.IO.DirectoryPath" /> to the special path.
+            </returns>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.GetApplicationRoot">
+            <summary>
+            Gets the application root path.
+            </summary>
+            <returns>
+            The application root path.
+            </returns>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.GetEnvironmentVariable(System.String)">
+            <summary>
+            Gets an environment variable.
+            </summary>
+            <param name="variable">The variable.</param>
+            <returns>
+            The value of the environment variable.
+            </returns>
+        </member>
+        <member name="P:Code.Cake.MutableCakeEnvironment.EnvironmentPaths">
+            <summary>
+            Gets a mutable set of paths. This is initialized with the PATH environment variable but can be changed at any time.
+            When getting the PATH variable with <see cref="M:Code.Cake.MutableCakeEnvironment.GetEnvironmentVariable(System.String)"/>, this set is returned as a joined string.
+            </summary>
+        </member>
+        <member name="M:Code.Cake.MutableCakeEnvironment.GetEnvironmentVariables">
+            <summary>
+            Gets all environment variables.
+            </summary>
+            <returns>The environment variables as IDictionary&lt;string, string&gt; </returns>
+        </member>
+        <member name="T:Cake.Arguments.CakeOptions">
+            <summary>
+            The options that determines how the application should behave.
+            </summary>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.Verbosity">
+            <summary>
+            Gets or sets the output verbosity.
+            </summary>
+            <value>The output verbosity.</value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.Script">
+            <summary>
+            Gets or sets the build script.
+            </summary>
+            <value>The build script.</value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.Arguments">
+            <summary>
+            Gets the script arguments.
+            </summary>
+            <value>The script arguments.</value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.ShowDescription">
+            <summary>
+            Gets or sets a value indicating whether to show task descriptions.
+            </summary>
+            <value>
+              <c>true</c> to show task description; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.PerformDryRun">
+            <summary>
+            Gets or sets a value indicating whether to perform a dry run.
+            </summary>
+            <value>
+              <c>true</c> if a dry run should be performed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.ShowHelp">
+            <summary>
+            Gets or sets a value indicating whether to show help.
+            </summary>
+            <value>
+              <c>true</c> to show help; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cake.Arguments.CakeOptions.ShowVersion">
+            <summary>
+            Gets or sets a value indicating whether to show version information.
+            </summary>
+            <value>
+              <c>true</c> to show version information; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Cake.Arguments.CakeOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Arguments.CakeOptions"/> class.
+            </summary>
+        </member>
+        <member name="T:Cake.Arguments.IArgumentParser">
+            <summary>
+            Represents an argument parser.
+            </summary>
+        </member>
+        <member name="M:Cake.Arguments.IArgumentParser.Parse(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Parses the specified arguments.
+            </summary>
+            <param name="args">The arguments to parse.</param>
+            <returns>A <see cref="T:Cake.Arguments.CakeOptions"/> instance representing the arguments.</returns>
+        </member>
+        <member name="M:Cake.Common.SecureFileAliases.SecureFileUncrypt(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Uncrypts a file into a <see cref="T:CodeCake.TemporaryFile"/>.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="file">File to decrypt.</param>
+            <param name="secret">Secret to use.</param>
+            <returns>A temporary uncrypted file.</returns>
+        </member>
+        <member name="M:Cake.Common.SecureFileAliases.SecureFileCrypt(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Encrypts an existing file into a new file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="file">File to encrypt.</param>
+            <param name="encryptedFile">Path of the file. The file must not exist.</param>
+            <param name="secret">The secret to use.</param>
+        </member>
+        <member name="T:Cake.Common.Solution.ITemporarySolutionFile">
+            <summary>
+            Disposable temporary solution file (.sln) that supports exclusion of projects from build.
+            </summary>
+            <remarks>
+            <para>
+            We must be able to build a solution without the CodeCakeBuilder project (or any other projects).
+            The first solution would be to explicitely compile each project... but there is currently no way 
+            to obtain the projects in a list ordered by "Build Order".
+            </para>
+            <para>
+            To compute it, one would need:
+            </para>
+            <para>
+            - SolutionProject should expose a IEnumerable of SolutionProject (a ProjectReferences property).
+            </para>
+            <para>
+            - Parsing of sln files should extract project dependencies section for each project.
+              This is required in order to honor explicit (reference independent) build ordering (Menu > Project > Project Build Order).
+            
+            <code>
+              Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCakeBuilder", "CodeCakeBuilder\CodeCakeBuilder.csproj", "{FD4817B6-3CD7-4E74-AA10-7CA95FDFCF2D}"
+                ProjectSection( ProjectDependencies ) = postProject
+                  { 6D0D47C8 - 98F7 - 47DE - B118 - AD3606455F7E} = { 6D0D47C8 - 98F7 - 47DE - B118 - AD3606455F7E}
+                EndProjectSection
+              EndProject
+            </code>
+             </para>
+            <para>
+            We should then order the graph... it is quite complex and we'll loose any solution peculiarities that may exist.
+            </para>
+            <para>
+            The idea is to base the build on a modified sln and this is not so complex: we must just have to remove 
+            all entries starting with the GUID of the project we don't want to build in the GlobalSection(ProjectConfigurationPlatforms):
+            </para>
+            <code>
+                 GlobalSection(ProjectConfigurationPlatforms) = postSolution
+                     ...
+                     {FD4817B6-3CD7-4E74-AA10-7CA95FDFCF2D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+                     ...
+                 EndGlobalSection
+            </code>
+            <para>
+            The default implementation is simple but works well.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Cake.Common.Solution.ITemporarySolutionFile.Cake">
+            <summary>
+            Gets the <see cref="T:Cake.Core.ICakeContext"/>.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Solution.ITemporarySolutionFile.FullPath">
+            <summary>
+            Gets the full path of this temporary solution.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Solution.ITemporarySolutionFile.OriginalFullPath">
+            <summary>
+            Gets the original full path of solution.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Solution.ITemporarySolutionFile.ExcludeProjectsFromBuild(System.String[])">
+            <summary>
+            Excludes project from build by their names.
+            This immediately updates the <see cref="P:Cake.Common.Solution.ITemporarySolutionFile.FullPath"/> sln file.
+            </summary>
+            <param name="projectNames">Names of the projects to exclude from build.</param>
+        </member>
+        <member name="M:Cake.Common.Solution.ITemporarySolutionFile.ExcludeProjectsFromBuild(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Excludes project from build by their names. This updates the <see cref="P:Cake.Common.Solution.ITemporarySolutionFile.FullPath"/> sln file.
+            </summary>
+            <param name="projectNames">Names of the projects to exclude from build.</param>
+        </member>
+        <member name="T:Cake.Common.Solution.CodeCakeSolutionExtensions">
+            <summary>
+            Supports extension methods for Solution related objects.
+            </summary>
+        </member>
+        <member name="M:Cake.Common.Solution.CodeCakeSolutionExtensions.CreateTemporarySolutionFile(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">
+            <summary>
+            Creates a <see cref="T:Cake.Common.Solution.ITemporarySolutionFile"/> for a solution (.sln) file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="solutionPath">The solution path.</param>
+            <returns>A temporary solution file that must be disposed.</returns>
+        </member>
+        <member name="T:Cake.Common.Solution.TemporarySolutionFile">
+            <summary>
+            Internal implementation of <see cref="T:Cake.Common.Solution.ITemporarySolutionFile"/>.
+            Use <see cref="M:Cake.Common.Solution.CodeCakeSolutionExtensions.CreateTemporarySolutionFile(Cake.Core.ICakeContext,Cake.Core.IO.FilePath)">CreateTemporarySolutionFile</see> extension method to obtain a concrete implementation.
+            </summary>
+        </member>
+        <member name="T:Cake.Diagnostics.IVerbosityAwareLog">
+            <summary>
+            Represents a verbosity aware log.
+            </summary>
+        </member>
+        <member name="M:Cake.Diagnostics.IVerbosityAwareLog.SetVerbosity(Cake.Core.Diagnostics.Verbosity)">
+            <summary>
+            Sets the verbosity.
+            </summary>
+            <param name="verbosity">The desired verbosity.</param>
+        </member>
+        <member name="T:CodeCake.FileAndPathAliases">
+            <summary>
+            Contains functionalities related to the interactive mode.
+            </summary>
+        </member>
+        <member name="M:CodeCake.FileAndPathAliases.FindDirectoryAbove(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Finds a directory above the current working directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="directoryName">Name of the directory.</param>
+            <returns>Null if not found, otherwise the path of the directory.</returns>
+        </member>
+        <member name="M:CodeCake.FileAndPathAliases.FindSiblingDirectoryAbove(Cake.Core.ICakeContext,System.String,System.String)">
+            <summary>
+            Finds a named directory above or next to the specified <paramref name="start"/>.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="start">Starting directory.</param>
+            <param name="directoryName">Name of the directory.</param>
+            <returns>Null if not found, otherwise the path of the directory.</returns>
+        </member>
+        <member name="T:CodeCake.InteractiveAliases">
+            <summary>
+            Contains functionalities related to the interactive mode.
+            </summary>
+        </member>
+        <member name="F:CodeCake.InteractiveAliases.NoInteractionArgument">
+            <summary>
+            The "nointeraction" string with no dash before.
+            </summary>
+        </member>
+        <member name="M:CodeCake.InteractiveAliases.IsInteractiveMode(Cake.Core.ICakeContext)">
+            <summary>
+            Gets whether the context supports interaction with the user (depends on -nointeraction argument).
+            </summary>
+            <param name="context">The context.</param>
+            <returns>True if interactive mode is available, false otherwise.</returns>
+        </member>
+        <member name="M:CodeCake.InteractiveAliases.ReadInteractiveOption(Cake.Core.ICakeContext,System.String,System.Char[])">
+            <summary>
+            Prompts the user for one of the <paramref name="options"/> characters (case insensitive).
+            <see cref="M:CodeCake.InteractiveAliases.IsInteractiveMode(Cake.Core.ICakeContext)"/> must be true otherwise an <see cref="T:System.InvalidOperationException"/> is thrown.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="message">
+            Message that will be displayed in front of the input. 
+            When null, no message is displayed, when not null, the options are automatically displayed: (Y/N/C).
+            </param>
+            <param name="options">Allowed characters. This is case insensitive.</param>
+            <returns>The entered char, always in uppercase. Necessarily on of the <paramref name="options"/>.</returns>
+        </member>
+        <member name="M:CodeCake.InteractiveAliases.InteractiveEnvironmentVariable(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Retrieves the value of the environment variable or null if the environment variable do not exist
+            and can not be given by the user.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="variable">The environment variable.</param>
+            <returns>Retrieves the value of the environment variable or null if the environment variable do not exist.</returns>
+        </member>
+        <member name="T:CodeCake.RijndaelCrypt">
+            <summary>
+            This is the same algorithm and configuration as https://github.com/appveyor/secure-file.
+            </summary>
+        </member>
+        <member name="M:CodeCake.RijndaelCrypt.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            Encrypts a file into another file (that must not exist) with a given secret.
+            </summary>
+            <param name="fileName">File to encrypt.</param>
+            <param name="outFileName">Target file that will be encrypted. Must not exist.</param>
+            <param name="secret">Secret to use.</param>
+        </member>
+        <member name="M:CodeCake.RijndaelCrypt.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            Decrypts a file into another file (that must not exist) with a given secret.
+            </summary>
+            <param name="fileName">File to decrypt.</param>
+            <param name="outFileName">Target file that will be decrypted. Must not exist.</param>
+            <param name="secret">Secret to use.</param>
+        </member>
+        <member name="T:CodeCake.TemporaryFile">
+            <summary>
+            Small helper to automatically delete a temporary file. 
+            It is mainly a secure wrapper around <see cref="M:System.IO.Path.GetTempFileName">GetTempFileName</see> that 
+            creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file: the <see cref="P:Path"/>
+            property exposes it. This file is flagged by default with <see cref="F:System.IO.FileAttributes.Temporary"/> (short-lived): it will automatically be 
+            deleted by the Operating System during if it is still here on reboot.
+            (Borrowed from CK.Core.)
+            </summary>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.#ctor">
+            <summary>
+            Initializes a new short lived <see cref="T:CodeCake.TemporaryFile"/>.
+            </summary>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new <see cref="T:CodeCake.TemporaryFile"/>.
+            When <paramref name="shortLived"/> is true, the <see cref="F:System.IO.FileAttributes.Temporary"/> is set on the file.
+            </summary>
+            <param name="shortLived">True to set the <see cref="F:System.IO.FileAttributes.Temporary"/> on the file.</param>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.#ctor(System.String)">
+            <summary>
+            Initializes a new short lived <see cref="T:CodeCake.TemporaryFile"/> with an extension - the file will have a name looking like : xxxx.tmp.extension        
+            </summary>
+            <param name="extension">The extension of the file (example : '.png' and 'png' would both work) </param>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.#ctor(System.Boolean,System.String)">
+            <summary>
+            Initializes a new <see cref="T:CodeCake.TemporaryFile"/> with an extension.
+            When <paramref name="shortLived"/> is true, the <see cref="F:System.IO.FileAttributes.Temporary"/> is set on the file.
+            The file will have a name looking like : xxxx.tmp.extension
+            </summary>
+            <param name="shortLived">True to set the <see cref="F:System.IO.FileAttributes.Temporary"/> on the file.</param>
+            <param name="extension">Optional extension of the file (example : '.png' and 'png' would both work).</param>
+            <remarks>
+            When extension is ".", the final path will end with a ".".
+            </remarks>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.Finalize">
+            <summary>
+            Finalizer attempts to delete the file.
+            </summary>
+        </member>
+        <member name="P:CodeCake.TemporaryFile.Path">
+            <summary>
+            Gets the complete file path of the temporary file.
+            It is <see cref="F:System.String.Empty"/> when the file has been <see cref="M:CodeCake.TemporaryFile.Detach"/>ed.
+            The file is not opened but exists, initially empty.
+            </summary>
+        </member>
+        <member name="P:CodeCake.TemporaryFile.IsDetached">
+            <summary>
+            Gets whether the temporary file is detached (its <see cref="P:CodeCake.TemporaryFile.Path"/> is <see cref="F:System.String.Empty"/>).
+            </summary>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.Detach">
+            <summary>
+            Detaches the temporary file: it will no more be automatically destroyed.
+            When created short-lived (see <see cref="F:System.IO.FileAttributes.Temporary"/>), this flag is not reset: the 
+            file will be destroyed by the Operating System on the bext reboot.
+            </summary>
+        </member>
+        <member name="M:CodeCake.TemporaryFile.Dispose">
+            <summary>
+            Attempts to delete the temporary file.
+            </summary>
+        </member>
+        <member name="T:SimpleGitVersionInfoAttribute">
+            <summary>
+            Automatically generated by SimpleGitVersionTask 0.2.2. 
+            </summary>
+        </member>
+    </members>
+</doc>

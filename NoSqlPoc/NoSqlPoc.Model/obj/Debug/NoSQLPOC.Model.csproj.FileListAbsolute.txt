@@ -1,0 +1,10 @@
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Model\bin\Debug\NoSQLPOC.Model.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Model\bin\Debug\NoSQLPOC.Model.pdb
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Model\obj\Debug\NoSQLPOC.Model.csprojResolveAssemblyReference.cache
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Model\obj\Debug\NoSQLPOC.Model.dll
+C:\Users\mpatil\Documents\Visual Studio 2015\Projects\NoSQLPOC\NoSQLPOC.Model\obj\Debug\NoSQLPOC.Model.pdb
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Model\bin\Debug\NoSQLPOC.Model.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Model\bin\Debug\NoSQLPOC.Model.pdb
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Model\obj\Debug\NoSqlPoc.Model.csprojResolveAssemblyReference.cache
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Model\obj\Debug\NoSQLPOC.Model.dll
+C:\DEV\Workspace\DotNet\Github\NoSqlPOC\NoSqlPoc.Model\obj\Debug\NoSQLPOC.Model.pdb
