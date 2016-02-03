@@ -1,4 +1,4 @@
-using NoSqlPoc.DAL.UserManagement;
+using NoSQLPOC.Dal.UserManagement;
 using NoSqlPoc.Model;
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace NoSqlPoc.DAL
                 //Console.WriteLine("plan: {0}, update:{1}, relativediff={2}, TLStatus={3}", plan, update, relative,
                 //    NoSqlPoc.Functional.MathOperations.impactTL(true, plan, update, relative));
                 
-                IEnumerable<User> users = UserDAO.GetInstance().GetUsersByLastName("Patel");
+                IEnumerable<User> users = UserDao.GetInstance().GetUsersByLastName("Patel");
                 foreach (var item in users)
                 {
                     Console.WriteLine("{0}: {1} {2}", item.UserId, item.FirstName, item.Age);

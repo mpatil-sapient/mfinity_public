@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NoSQLPOC.Model;
+using NoSqlPoc.Model;
 
-namespace NoSQLPOC.DAL.UserManagement
+namespace NoSqlPoc.Dal.UserManagement
 {
-    public class UserDAL
+    public class UserDal
     {
         public void GetUsersByLastName(String LastName)
         {

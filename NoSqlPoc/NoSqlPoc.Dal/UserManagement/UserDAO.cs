@@ -1,6 +1,6 @@
 ﻿using Cassandra;
 using Cassandra.Mapping;
-using NoSQLPOC.Model;
+using NoSqlPoc.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace NoSQLPOC.DAL.UserManagement
+namespace NoSQLPOC.Dal.UserManagement
 {
-    public class UserDAO
+    public class UserDao
     {
         public IEnumerable<User> GetUsersByLastName(string Lastname)
         {
@@ -21,9 +21,9 @@ namespace NoSQLPOC.DAL.UserManagement
             return users;
         }
 
-        public static UserDAO GetInstance()
+        public static UserDao GetInstance()
         {
-            return new UserDAO();
+            return new UserDao();
         }
     }
 }
