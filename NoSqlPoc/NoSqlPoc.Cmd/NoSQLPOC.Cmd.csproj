@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NoSqlPoc.DAL\NoSqlPoc.DAL.csproj">
+    <ProjectReference Include="..\NoSqlPoc.DAL\NoSqlPoc.Dal.csproj">
       <Project>{8a94dd7e-cdf3-4c4f-b60d-a4c0a583b3b3}</Project>
-      <Name>NoSqlPoc.DAL</Name>
+      <Name>NoSqlPoc.Dal</Name>
     </ProjectReference>
     <ProjectReference Include="..\NoSqlPoc.Functional\NoSqlPoc.Functional.fsproj">
       <Project>{1029f29b-7426-43ad-aad0-01473f3f5e20}</Project>

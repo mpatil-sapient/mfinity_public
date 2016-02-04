@@ -8,7 +8,15 @@ module NoSqlPoc.Functional.MathOperations
     let add a b = 
         a + b
 
-    let impactTL (tlrelevant:bool) (plan:System.Decimal) (update:System.Decimal) (relative:System.Decimal) = 
-        if (((update - plan) / plan * (decimal)100.0) > relative) then "green"
-        else "red"
+    type TrafficLightColor =
+        | White=0
+        | Black=1
+        | Green=2
+        | Yellow=3
+        | Red=4
+
+    let impactTL (mstlrelevant:bool) (impacttlrelevant:bool) (plan:System.Decimal) (update:System.Decimal) (relative:System.Decimal) = 
+        if (mstlrelevant = false) then TrafficLightColor.Black
+        elif () then TrafficLightColor.White
+        else TrafficLightColor.Black
 
