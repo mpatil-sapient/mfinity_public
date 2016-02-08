@@ -1,0 +1,24 @@
+﻿<Window x:Class="FileMappingValidationTool.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileMappingValidationTool.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="725">
+    <Grid>
+        <DockPanel HorizontalAlignment="Center"  Margin="10">
+            <WrapPanel HorizontalAlignment="left" DockPanel.Dock="Top" Margin="0,0,0,10">
+                <TextBox Width="400" Name="txtSource" IsReadOnly="True"></TextBox>
+                <Button Name="btnSource" Click="btnSourceFile_Click">Choose source</Button>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="left" DockPanel.Dock="Top" Margin="0,0,0,10">
+                <TextBox Width="400" Name="txtDestination" IsReadOnly="True"></TextBox>
+                <Button Name="btnDestination" Click="btnDestinationFile_Click">Choose destination</Button>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="center" DockPanel.Dock="Top" Margin="0,0,0,10">
+                <Button Name="btnProcess" Click="btnProcess_Click">Process files</Button>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</Window>

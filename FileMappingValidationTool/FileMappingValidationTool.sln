@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.UI", "FileMappingValidationTool.UI\FileMappingValidationTool.UI.csproj", "{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.Logic", "FileMappingValidationTool.Logic\FileMappingValidationTool.Logic.csproj", "{E66746C6-7FBC-4189-9530-84A4943A7DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.DataAccess", "FileMappingValidationTool.DataAccess\FileMappingValidationTool.DataAccess.csproj", "{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66746C6-7FBC-4189-9530-84A4943A7DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66746C6-7FBC-4189-9530-84A4943A7DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66746C6-7FBC-4189-9530-84A4943A7DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66746C6-7FBC-4189-9530-84A4943A7DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
