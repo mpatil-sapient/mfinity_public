@@ -21,7 +21,8 @@
                 <Button Name="btnDestination" Click="btnDestinationFile_Click"  Margin="10,0,0,0">Choose destination</Button>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="center" DockPanel.Dock="Top" Margin="0,0,0,10">
-                <Button Name="btnProcess" Click="btnProcess_Click">Process files</Button>
+                <Button Name="btnValidate" Command="{Binding ValidateSourceCommand}" Margin="10,0,10,0">Validate source</Button>
+                <Button Name="btnMap" Command="{Binding MapFilesCommand}" Margin="10,0,10,0">Map files</Button>
             </WrapPanel>
         </DockPanel>
     </Grid>

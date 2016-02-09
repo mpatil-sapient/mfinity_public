@@ -40,10 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
-    <Compile Include="DelegateCommand.cs" />
-    <Compile Include="FileMappingViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="Command\DelegateCommand.cs" />
+    <Compile Include="ViewModel\FileMappingViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileMappingValidationTool.Logic\FileMappingValidationTool.Logic.csproj">
+      <Project>{e66746c6-7fbc-4189-9530-84a4943a7de5}</Project>
+      <Name>FileMappingValidationTool.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

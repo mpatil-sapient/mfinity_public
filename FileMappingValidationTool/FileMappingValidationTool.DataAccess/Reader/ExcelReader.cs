@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FileMappingValidationTool.DataAccess.Reader
 {
-    public class ExcelReader
+    public class ExcelReader : IFileReader
     {
 
         public DataSet ReadDataSet(String filePath)
@@ -24,17 +24,9 @@ namespace FileMappingValidationTool.DataAccess.Reader
 
                 try
                 {
-                    //4. DataSet - Create column names from first row
                     excelReader.IsFirstRowAsColumnNames = true;
                     result = excelReader.AsDataSet();
 
-                    ////5. Data Reader methods
-                    //while (excelReader.Read())
-                    //{
-                    //    //excelReader.GetInt32(0);
-                    //}
-
-                    //6. Free resources (IExcelDataReader is IDisposable)
                 }
                 finally
                 {

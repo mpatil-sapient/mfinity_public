@@ -32,24 +32,26 @@ namespace FileMappingValidationTool.UI
             InitializeComponent();
 
             uiHelper = UIHelper.GetInstance();
-            _viewModel = (FileMappingViewModel)this.DataContext;
+            _viewModel = this.DataContext as FileMappingViewModel;
+            _viewModel.MessageBoxRequest += new EventHandler<string>(ShowValidationMessages);
         }
 
         private void btnSourceFile_Click(object sender, RoutedEventArgs e)
         {
             _sourceFile = uiHelper.ShowFileDialog(_viewModel.FileExtensions);
-            txtSource.Text = _sourceFile.FileName;
+            _viewModel.SourceFile = _sourceFile.FileName;
         }
 
         private void btnDestinationFile_Click(object sender, RoutedEventArgs e)
         {
             _destFile = uiHelper.ShowFileDialog(_viewModel.FileExtensions);
-            txtDestination.Text = _destFile.FileName;
+            _viewModel.DestinationFile = _destFile.FileName;
         }
 
-        private void btnProcess_Click(object sender, RoutedEventArgs e)
+        void ShowValidationMessages(object sender, string e)
         {
-
+            MessageBox.Show(e);
         }
+
     }
 }
