@@ -31,10 +31,18 @@ namespace FileMappingValidationTool.Logic.Mapping
             int rowCount;
             
             //read the sheet/table names and columns names from config and use that to validate duplicates
-            rowCount = _sourceDS.Tables["RM"].Rows.Count;
-            if (Convert.ToInt16(_sourceDS.Tables["RM"].Rows[rowCount - 1][0]) != rowCount)
-                str.AppendFormat("{0} : {1} : {2}", "RM", "RM ID", "ID count dont match, please check IDs");
-
+            foreach(DataTable sourceTable in _sourceDS.Tables)
+            { 
+                rowCount = sourceTable.Rows.Count;
+                //validate only if this isnt a reference sheet
+                if(!sourceTable.TableName.StartsWith("ref", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    //assumes that the first column in each sheet is the unique identifier, needs to be validated for all tabs
+                    if (sourceTable.Columns[0].DataType == typeof(System.Double) && Convert.ToInt64(sourceTable.Rows[rowCount-1][0]) != rowCount)
+                        str.AppendFormat("{0} : {1} : {2}", sourceTable.TableName, sourceTable.Columns[0].ColumnName,
+                            "ID count dont match, please check IDs\n");
+                }
+            }
             return str.ToString();
         }
     }

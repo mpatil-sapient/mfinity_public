@@ -84,6 +84,7 @@ namespace FileMappingValidationTool.ViewModel
             }
             catch (Exception ex)
             {
+                MessageBox_Show(ex.Message);
             }
         }
         private void ValidateSource()
@@ -96,6 +97,7 @@ namespace FileMappingValidationTool.ViewModel
            }
             catch (Exception ex)
             {
+                MessageBox_Show(ex.Message);
             }
         }
 
