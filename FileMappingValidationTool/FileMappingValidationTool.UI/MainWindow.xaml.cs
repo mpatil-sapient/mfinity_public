@@ -1,4 +1,5 @@
 ﻿using FileMappingValidationTool.UI.Helper;
+using FileMappingValidationTool.ViewModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -22,26 +23,28 @@ namespace FileMappingValidationTool.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        UIHelper uiHelper = UIHelper.GetInstance();
-        OpenFileDialog sourceFile;
-        OpenFileDialog destFile;
+        OpenFileDialog _sourceFile;
+        OpenFileDialog _destFile;
+        FileMappingViewModel _viewModel;
+        UIHelper uiHelper;
         public MainWindow()
         {
             InitializeComponent();
 
-
+            uiHelper = UIHelper.GetInstance();
+            _viewModel = (FileMappingViewModel)this.DataContext;
         }
 
         private void btnSourceFile_Click(object sender, RoutedEventArgs e)
         {
-            sourceFile = uiHelper.ShowFileDialog("Excel 2007|*.xls|Excel 2010|*.xlsx");
-            txtSource.Text = sourceFile.FileName;
+            _sourceFile = uiHelper.ShowFileDialog(_viewModel.FileExtensions);
+            txtSource.Text = _sourceFile.FileName;
         }
 
         private void btnDestinationFile_Click(object sender, RoutedEventArgs e)
         {
-            destFile = uiHelper.ShowFileDialog("Excel 2007|*.xls|Excel 2010|*.xlsx");
-            txtDestination.Text = destFile.FileName;
+            _destFile = uiHelper.ShowFileDialog(_viewModel.FileExtensions);
+            txtDestination.Text = _destFile.FileName;
         }
 
         private void btnProcess_Click(object sender, RoutedEventArgs e)

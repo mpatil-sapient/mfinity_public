@@ -95,6 +95,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileMappingValidationTool.ViewModel\FileMappingValidationTool.ViewModel.csproj">
+      <Project>{2a6b7983-15a9-42cc-ab3b-51ee8f556fd4}</Project>
+      <Name>FileMappingValidationTool.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

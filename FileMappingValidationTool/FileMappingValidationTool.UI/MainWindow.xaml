@@ -4,17 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileMappingValidationTool.UI"
+        xmlns:vm="clr-namespace:FileMappingValidationTool.ViewModel;assembly=FileMappingValidationTool.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="725">
+    <Window.DataContext>
+        <vm:FileMappingViewModel/>
+    </Window.DataContext>
     <Grid>
         <DockPanel HorizontalAlignment="Center"  Margin="10">
             <WrapPanel HorizontalAlignment="left" DockPanel.Dock="Top" Margin="0,0,0,10">
-                <TextBox Width="400" Name="txtSource" IsReadOnly="True"></TextBox>
-                <Button Name="btnSource" Click="btnSourceFile_Click">Choose source</Button>
+                <TextBox Width="400" Name="txtSource" IsReadOnly="True" Text="{Binding SourceFile}"></TextBox>
+                <Button Name="btnSource" Click="btnSourceFile_Click" Margin="10,0,0,0">Choose source</Button>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="left" DockPanel.Dock="Top" Margin="0,0,0,10">
-                <TextBox Width="400" Name="txtDestination" IsReadOnly="True"></TextBox>
-                <Button Name="btnDestination" Click="btnDestinationFile_Click">Choose destination</Button>
+                <TextBox Width="400" Name="txtDestination" IsReadOnly="True" Text="{Binding DestinationFile}"></TextBox>
+                <Button Name="btnDestination" Click="btnDestinationFile_Click"  Margin="10,0,0,0">Choose destination</Button>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="center" DockPanel.Dock="Top" Margin="0,0,0,10">
                 <Button Name="btnProcess" Click="btnProcess_Click">Process files</Button>
