@@ -30,6 +30,7 @@ namespace FileMappingValidationTool.Logic.Mapping
             StringBuilder str = new StringBuilder();
             int rowCount;
             
+            //read the sheet/table names and columns names from config and use that to validate duplicates
             rowCount = _sourceDS.Tables["RM"].Rows.Count;
             if (Convert.ToInt16(_sourceDS.Tables["RM"].Rows[rowCount - 1][0]) != rowCount)
                 str.AppendFormat("{0} : {1} : {2}", "RM", "RM ID", "ID count dont match, please check IDs");
