@@ -11,8 +11,8 @@ namespace FileMappingValidationTool.ViewModel
 {
     public class FileMappingViewModel : BaseViewModel
     {
-        private string _sourceFile = "C:\\DEV\\Workspace\\DotNet\\SampleTestData\\25-4 RMs.xlsx";
-        private string _destinationFile = "C:\\DEV\\Workspace\\DotNet\\SampleTestData\\UploadTemplate(1).xlsx";
+        private string _sourceFile = @"C:\Users\dSurt1\Downloads\25-1 RMs.xlsx";
+        private string _destinationFile = @"C:\Users\dSurt1\Downloads\UploadTemplate.xlsx";
         public string FileExtensions = "Excel 2010|*.xlsx|Excel 2007|*.xls";
         private IMappingLogic _logic = new MappingLogic();
 

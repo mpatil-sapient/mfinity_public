@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Worksheets>
+  <Worksheet Name="RM">
+    <Validations>
+      <Validation Type="ZeroCheck" Field="(D)ice" />
+      <Validation Type="ZeroCheck" Field="D(i)ce" />
+      <Validation Type="ZeroCheck" Field="Di(C Mgt)e" />
+      <Validation Type="ZeroCheck" Field="Di(C Local)e" />
+      <Validation Type="ZeroCheck" Field="Dic(E)" />
+    </Validations>
+  </Worksheet>
+  <Worksheet Name="MS">
+    <Validations>
+      <Validation Type="PossibleValueCheck" Field="INT Type">
+        <Values>
+          <Value>MileStone</Value>
+          <Value>Text</Value>
+        </Values>
+      </Validation>
+    </Validations>
+  </Worksheet>
+  <Worksheet Name="Int Tags">
+    <Validations>
+      <Validation Type="PossibleValueCheck" Field="Name">
+        <Values>
+          <Value>MileStone</Value>
+          <Value>Text</Value>
+        </Values>
+      </Validation>
+    </Validations>
+  </Worksheet>
+  <Worksheet Name="IM- Advance One Time">
+    <Validations>
+      <Validation Type="PossibleValueCheck" Field="Traffic Light Logic">
+        <Values>
+          <Value>PerPeriod</Value>
+          <Value>Cumulative</Value>
+        </Values>
+      </Validation>
+    </Validations>
+  </Worksheet>
+  <Worksheet Name="IM- Advance Recurring">
+    <Validations>
+      <Validation Type="PossibleValueCheck" Field="RR Calc. Method">
+        <Values>
+          <Value>12 Month Rolling Average</Value>
+          <Value>Most Recent Month</Value>
+        </Values>
+      </Validation>
+    </Validations>
+  </Worksheet>
+</Worksheets>
