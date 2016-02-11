@@ -51,11 +51,6 @@
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BusinessRules\ValidationList.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FileMappingValidationTool.DataAccess\FileMappingValidationTool.DataAccess.csproj">
       <Project>{a07bc9fa-549e-42da-8147-1368ccb7a4e3}</Project>
       <Name>FileMappingValidationTool.DataAccess</Name>
@@ -63,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessRules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
