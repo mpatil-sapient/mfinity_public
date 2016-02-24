@@ -1,0 +1,5 @@
+C:\Github\FileMappingValidation\FileMappingValidationTool\FileMappingValidationTool.Core\bin\Debug\FileMappingValidationTool.Core.dll
+C:\Github\FileMappingValidation\FileMappingValidationTool\FileMappingValidationTool.Core\bin\Debug\FileMappingValidationTool.Core.pdb
+C:\Github\FileMappingValidation\FileMappingValidationTool\FileMappingValidationTool.Core\obj\Debug\FileMappingValidationTool.Core.csprojResolveAssemblyReference.cache
+C:\Github\FileMappingValidation\FileMappingValidationTool\FileMappingValidationTool.Core\obj\Debug\FileMappingValidationTool.Core.dll
+C:\Github\FileMappingValidation\FileMappingValidationTool\FileMappingValidationTool.Core\obj\Debug\FileMappingValidationTool.Core.pdb
