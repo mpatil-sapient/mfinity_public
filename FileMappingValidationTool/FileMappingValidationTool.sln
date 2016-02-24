@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.UI", "FileMappingValidationTool.UI\FileMappingValidationTool.UI.csproj", "{2143C1DF-0FAE-4729-A67F-A8C9CD9977C7}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.DataAccess", "FileMappingValidationTool.DataAccess\FileMappingValidationTool.DataAccess.csproj", "{A07BC9FA-549E-42DA-8147-1368CCB7A4E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.ViewModel", "FileMappingValidationTool.ViewModel\FileMappingValidationTool.ViewModel.csproj", "{2A6B7983-15A9-42CC-AB3B-51EE8F556FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMappingValidationTool.Core", "FileMappingValidationTool.Core\FileMappingValidationTool.Core.csproj", "{81B7AE20-ADB2-4BCE-9F39-05C044324AD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2A6B7983-15A9-42CC-AB3B-51EE8F556FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A6B7983-15A9-42CC-AB3B-51EE8F556FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A6B7983-15A9-42CC-AB3B-51EE8F556FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B7AE20-ADB2-4BCE-9F39-05C044324AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B7AE20-ADB2-4BCE-9F39-05C044324AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B7AE20-ADB2-4BCE-9F39-05C044324AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B7AE20-ADB2-4BCE-9F39-05C044324AD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

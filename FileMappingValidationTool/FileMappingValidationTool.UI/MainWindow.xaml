@@ -20,6 +20,10 @@
                 <TextBox Width="400" Name="txtDestination" IsReadOnly="True" Text="{Binding DestinationFile}"></TextBox>
                 <Button Name="btnDestination" Click="btnDestinationFile_Click"  Margin="10,0,0,0">Choose destination</Button>
             </WrapPanel>
+            <WrapPanel HorizontalAlignment="left" DockPanel.Dock="Top" Margin="0,0,0,10">
+                <TextBox Width="400" Name="txtValidationFile" IsReadOnly="True" Text="{Binding ValidationFile}"></TextBox>
+                <Button Name="btnValidation" Click="btnValidation_Click"  Margin="10,0,0,0">Choose Validation File</Button>
+            </WrapPanel>
             <WrapPanel HorizontalAlignment="center" DockPanel.Dock="Top" Margin="0,0,0,10">
                 <Button Name="btnValidate" Command="{Binding ValidateSourceCommand}" Margin="10,0,10,0">Validate source</Button>
                 <Button Name="btnMap" Command="{Binding MapFilesCommand}" Margin="10,0,10,0">Map files</Button>

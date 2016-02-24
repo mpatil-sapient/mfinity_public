@@ -25,6 +25,7 @@ namespace FileMappingValidationTool.UI
     {
         OpenFileDialog _sourceFile;
         OpenFileDialog _destFile;
+        OpenFileDialog _validateFile;
         FileMappingViewModel _viewModel;
         UIHelper uiHelper;
         public MainWindow()
@@ -51,6 +52,12 @@ namespace FileMappingValidationTool.UI
         void ShowValidationMessages(object sender, string e)
         {
             MessageBox.Show(e);
+        }
+
+        private void btnValidation_Click(object sender, RoutedEventArgs e)
+        {
+            _validateFile = uiHelper.ShowFileDialog(_viewModel.xmlFileExtension);
+            _viewModel.ValidationFile = _validateFile.FileName;
         }
 
     }

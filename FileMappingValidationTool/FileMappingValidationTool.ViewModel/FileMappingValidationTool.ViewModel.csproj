@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileMappingValidationTool.Core\FileMappingValidationTool.Core.csproj">
+      <Project>{81b7ae20-adb2-4bce-9f39-05c044324ad2}</Project>
+      <Name>FileMappingValidationTool.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileMappingValidationTool.Logic\FileMappingValidationTool.Logic.csproj">
       <Project>{e66746c6-7fbc-4189-9530-84a4943a7de5}</Project>
       <Name>FileMappingValidationTool.Logic</Name>

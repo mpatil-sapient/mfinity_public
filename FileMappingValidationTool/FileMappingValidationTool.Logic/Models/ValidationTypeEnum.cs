@@ -8,7 +8,12 @@ namespace FileMappingValidationTool.Logic.Models
 {
     public enum ValidationTypeEnum
     {
+        NullCheck,
         ZeroCheck,
-        PossibleValueCheck
+        DataTypeCheck,
+        PossibleValueCheck,
+        ReferenceValueCheck,
+        ConditionalCheck,
+        GroupCheck
     }
 }

@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\DataTableExtensions.cs" />
     <Compile Include="Mapping\IMappingLogic.cs" />
     <Compile Include="Mapping\MappingLogic.cs" />
     <Compile Include="Models\BusinessValidations.cs" />
@@ -48,14 +47,16 @@
     <Compile Include="Models\ValidationTypeEnum.cs" />
     <Compile Include="Models\WorkSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\ValidationHelper.cs" />
+    <Compile Include="Validation\IValidationHelper.cs" />
+    <Compile Include="Validation\IValidationLogic.cs" />
+    <Compile Include="Validation\ExcelValidationHelper.cs" />
+    <Compile Include="Validation\ValidationLogic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BusinessRules\ValidationList.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\FileMappingValidationTool.Core\FileMappingValidationTool.Core.csproj">
+      <Project>{81b7ae20-adb2-4bce-9f39-05c044324ad2}</Project>
+      <Name>FileMappingValidationTool.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileMappingValidationTool.DataAccess\FileMappingValidationTool.DataAccess.csproj">
       <Project>{a07bc9fa-549e-42da-8147-1368ccb7a4e3}</Project>
       <Name>FileMappingValidationTool.DataAccess</Name>
