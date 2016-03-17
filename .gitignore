@@ -1,9 +1,11 @@
 FileMappingValidationTool/FileMappingValidationTool.Core/bin/**/*
 FileMappingValidationTool/FileMappingValidationTool.Core/obj/**/*
+FileMappingValidationTool/FileMappingValidationTool.Logic/bin/**/*
+FileMappingValidationTool/FileMappingValidationTool.Logic/bin/**/*.txt
+FileMappingValidationTool/FileMappingValidationTool.Logic/obj/Debug/FileMappingValidationTool.Logic.csprojResolveAssemblyReference.cache
+FileMappingValidationTool/FileMappingValidationTool.Logic/obj/**/*
 FileMappingValidationTool/FileMappingValidationTool.DataAccess/bin/**/*
 FileMappingValidationTool/FileMappingValidationTool.DataAccess/obj/**/*
-FileMappingValidationTool/FileMappingValidationTool.Logic/bin/**/*
-FileMappingValidationTool/FileMappingValidationTool.Logic/obj/**/*
 FileMappingValidationTool/FileMappingValidationTool.UI/bin/**/*
 FileMappingValidationTool/FileMappingValidationTool.UI/obj/**/*
 FileMappingValidationTool/FileMappingValidationTool.ViewModel/bin/**/*
