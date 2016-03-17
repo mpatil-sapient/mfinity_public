@@ -1,0 +1,10 @@
+FileMappingValidationTool.Core/bin/**/*
+FileMappingValidationTool.Core/obj/**/*
+FileMappingValidationTool.DataAccess/bin/**/*
+FileMappingValidationTool.DataAccess/obj/**/*
+FileMappingValidationTool.Logic/bin/**/*
+FileMappingValidationTool.Logic/obj/**/*
+FileMappingValidationTool.UI/bin/**/*
+FileMappingValidationTool.UI/obj/**/*
+FileMappingValidationTool.ViewModel/bin/**/*
+FileMappingValidationTool.ViewModel/obj/**/*
