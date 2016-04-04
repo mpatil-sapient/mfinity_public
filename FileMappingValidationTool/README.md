@@ -1,1 +1,3 @@
 # mfinity_public
+
+INSPIRATION
