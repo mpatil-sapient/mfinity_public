@@ -51,7 +51,7 @@ namespace FileMappingValidationTool.Core.Extensions
             return logs;
         }
 
-        public static List<LogData> DataTypeCheck(this DataTable dataTable, string columnName
+        public static List<LogData> ReferenceDataTypeCheck(this DataTable dataTable, string columnName
             , DataTypeEnum dataType, string DataTypeField, DataTable referenceTable, string referenceDataTypeField, string referenceCompareField)
         {
             var logs = new List<LogData>();
@@ -79,7 +79,7 @@ namespace FileMappingValidationTool.Core.Extensions
         public static List<LogData> ValueCheck(this DataTable dataTable, string columnName, List<string> values)
         {
             var logs = new List<LogData>();
-            var invalidrows = dataTable.Rows.Cast<DataRow>().Where(a => !values.Contains(a.Field<string>(columnName), StringComparer.CurrentCultureIgnoreCase));
+            var invalidrows = dataTable.Rows.Cast<DataRow>().Where(a => !values.Contains((Convert.ToString(a.Field<object>(columnName)) ?? string.Empty), StringComparer.CurrentCultureIgnoreCase));
             if (invalidrows != null)
             {
                 foreach (var row in invalidrows)
@@ -89,7 +89,7 @@ namespace FileMappingValidationTool.Core.Extensions
                         WorkSheet = dataTable.TableName,
                         ColumnName = columnName,
                         RowNumber = dataTable.Rows.IndexOf(row) + 2,
-                        LogMessage = row.Field<string>(columnName) + " is incorrect.Possible values are " + string.Join(",", values)
+                        LogMessage = (Convert.ToString(row.Field<object>(columnName)) ?? string.Empty) + " is incorrect.Possible values are " + string.Join(",", values)
                     });
                     //str.AppendFormat("{0} : {1} : Row {2} : {3}", dataTable.TableName, columnName, dataTable.Rows.IndexOf(row) + 2,
                     //            row.Field<string>(columnName) + " is incorrect.Possible values are " + string.Join(",", values) + " \n");
@@ -102,7 +102,7 @@ namespace FileMappingValidationTool.Core.Extensions
         public static List<LogData> ConditionalCheck(this DataTable dataTable, string conditonField, List<string> conditionFieldValues, List<KeyValue> KeyValues)
         {
             var logs = new List<LogData>();
-            var conditionalRows = dataTable.Rows.Cast<DataRow>().Where(a => conditionFieldValues.Contains(a.Field<string>(conditonField), StringComparer.CurrentCultureIgnoreCase));
+            var conditionalRows = dataTable.Rows.Cast<DataRow>().Where(a => conditionFieldValues.Contains((Convert.ToString(a.Field<object>(conditonField)) ?? string.Empty), StringComparer.CurrentCultureIgnoreCase));
             if (conditionalRows != null)
             {
                 foreach (var row in conditionalRows)
@@ -129,34 +129,32 @@ namespace FileMappingValidationTool.Core.Extensions
         {
             var logs = new List<LogData>();
             ignoreFields.ForEach(a => dataTable.Columns.Remove(a));
+            var blankColumns = dataTable.Columns.Cast<DataColumn>().Where(a => a.DataType == typeof(object) && a.ColumnName.StartsWith("Column")).ToList();
+            blankColumns.ForEach(a => dataTable.Columns.Remove(a));
+            
+            var distinctRecords = dataTable.AsEnumerable().Distinct(System.Data.DataRowComparer.Default).ToList();  
 
-            //var selectedColumnsDataTable = dataTable.Columns.con;
+            var groupedData = from row in distinctRecords.AsEnumerable()
+                              group row by new { placeCol = row[basefield] } into groupby
+                              select new
+                              {
+                                  Name = groupby.Key,
+                                  CountOfClients = groupby.Count()
+                              };
 
-            //var groupedData = selectedColumnsDataTable.Rows.Cast<DataRow>().GroupBy(a=>a.Field<string>(basefield)).Co;
-            //var groupedData = from row in selectedColumnsDataTable.AsEnumerable()
-            //                  group row by row.Field<double>(basefield) into groups
-            //                  orderby groups.Key
-            //                  select new
-            //                  {
-            //                      Name = groups.Key,
-            //                      CountOfClients = groups.Count()
-            //                  };
-
-            //foreach (var data in groupedData)
-            //{
-            //    if (data.CountOfClients > 1)
-            //    {
-            //        logs.Add(new LogData
-            //        {
-            //            WorkSheet = dataTable.TableName,
-            //            ColumnName = basefield,
-            //            RowNumber = 0,
-            //            LogMessage = "Common data is not matching for " + data.Name + " " + basefield
-            //        });
-            //    }
-            //    //str.AppendFormat("{0} : {1} : Row {2} : {3}", dataTable.TableName, column.Name, dataTable.Rows.IndexOf(row) + 2,
-            //    //                Convert.ToString(row.Field<object>(column.Name)) + " is incorrect.\n");
-            //}
+            foreach (var data in groupedData)
+            {
+                if (data.CountOfClients > 1)
+                {
+                    logs.Add(new LogData
+                    {
+                        WorkSheet = dataTable.TableName,
+                        ColumnName = basefield,
+                        RowNumber = 0,
+                        LogMessage = "Common data is not matching for " + data.Name.placeCol + " " + basefield
+                    });
+                }
+            }
 
             return logs;
         }
@@ -202,18 +200,38 @@ namespace FileMappingValidationTool.Core.Extensions
             if (!dataTable.TableName.StartsWith("ref", StringComparison.CurrentCultureIgnoreCase))
             {
                 //assumes that the first column in each sheet is the unique identifier, needs to be validated for all tabs
-                if (dataTable.Columns[0].DataType == typeof(System.Double) && Convert.ToInt64(dataTable.Rows[rowCount - 1][0]) != rowCount)
+                //if (dataTable.Columns[0].DataType == typeof(System.Double) && Convert.ToInt64(dataTable.Rows[rowCount - 1][0]) != rowCount)
+                //{
+                //    logs.Add(new LogData
+                //    {
+                //        WorkSheet = dataTable.TableName,
+                //        ColumnName = dataTable.Columns[0].ColumnName,
+                //        RowNumber = 0,
+                //        LogMessage = "ID count dont match, please check IDs"
+                //    });
+                //}
+                //str.AppendFormat("{0} : {1} : {2}", dataTable.TableName, dataTable.Columns[0].ColumnName,
+                //    "ID count dont match, please check IDs\n");
+            }
+            return logs;
+        }
+
+        public static List<LogData> DataTypeCheck(this DataTable dataTable, string columnName)
+        {
+            var logs = new List<LogData>();
+            var diceWithZeros = dataTable.Rows.Cast<DataRow>().Where(a => (a.Field<object>(columnName) != null && a.Field<object>(columnName).ToString().TryParse() == null));
+            if (diceWithZeros != null)
+            {
+                foreach (var row in diceWithZeros)
                 {
                     logs.Add(new LogData
                     {
                         WorkSheet = dataTable.TableName,
-                        ColumnName = dataTable.Columns[0].ColumnName,
-                        RowNumber = 0,
-                        LogMessage = "ID count dont match, please check IDs"
+                        ColumnName = columnName,
+                        RowNumber = dataTable.Rows.IndexOf(row) + 2,
+                        LogMessage = columnName + " column value '" + row.Field<object>(columnName).ToString() + "' is not date format"
                     });
                 }
-                //str.AppendFormat("{0} : {1} : {2}", dataTable.TableName, dataTable.Columns[0].ColumnName,
-                //    "ID count dont match, please check IDs\n");
             }
             return logs;
         }

@@ -41,7 +41,9 @@
   <ItemGroup>
     <Compile Include="Extensions\DataRowExtensions.cs" />
     <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\CSVHelper.cs" />
     <Compile Include="Models\DataTypeEnum.cs" />
     <Compile Include="Models\KeyValue.cs" />
