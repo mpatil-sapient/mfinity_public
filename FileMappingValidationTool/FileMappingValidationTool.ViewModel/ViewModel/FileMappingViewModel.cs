@@ -14,9 +14,9 @@ namespace FileMappingValidationTool.ViewModel
 {
     public class FileMappingViewModel : BaseViewModel
     {
-        private string _sourceFile = @"C:\BCG\25-1 RMs.xlsx";
-        private string _destinationFile = @"C:\Users\dSurt1\Downloads\UploadTemplate.xlsx";
-        private string _validationFile = @"C:\BCG\ValidationList.xml";
+        private string _sourceFile = @"C:\BCG Docs\25-1 RMs.xlsx";
+        private string _destinationFile = @"C:\BCG Docs\UploadTemplate.xlsx";
+        private string _validationFile = @"C:\BCG Docs\ValidationList.xml";
         public string FileExtensions = "Excel 2010|*.xlsx|Excel 2007|*.xls";
         public string xmlFileExtension = "XML Files (*.xml)|*.xml";
         private IMappingLogic _logic = new MappingLogic();

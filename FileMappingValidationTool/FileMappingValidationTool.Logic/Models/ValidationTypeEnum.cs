@@ -10,10 +10,11 @@ namespace FileMappingValidationTool.Logic.Models
     {
         NullCheck,
         ZeroCheck,
-        DataTypeCheck,
+        ReferenceDataTypeCheck,
         PossibleValueCheck,
         ReferenceValueCheck,
         ConditionalCheck,
-        GroupCheck
+        GroupCheck,
+        DateTypeCheck
     }
 }

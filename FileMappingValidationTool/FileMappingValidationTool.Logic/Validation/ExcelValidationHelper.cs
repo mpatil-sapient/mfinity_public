@@ -66,9 +66,9 @@ namespace FileMappingValidationTool.Logic.Validation
                     case ValidationTypeEnum.NullCheck:
                         logData.AddRange(sourceTable.NullValueCheck(validation.Field));
                         break;
-                    case ValidationTypeEnum.DataTypeCheck:
+                    case ValidationTypeEnum.ReferenceDataTypeCheck:
                         var dataTypeReferenceTable = tableCollection.Where(a => a.TableName == validation.ReferenceTable).FirstOrDefault();
-                        logData.AddRange(sourceTable.DataTypeCheck(validation.Field, validation.DataType, validation.DataTypeField, dataTypeReferenceTable, validation.ReferenceDataTypeField, validation.ReferenceCompareField));
+                        logData.AddRange(sourceTable.ReferenceDataTypeCheck(validation.Field, validation.DataType, validation.DataTypeField, dataTypeReferenceTable, validation.ReferenceDataTypeField, validation.ReferenceCompareField));
                         break;
                     case ValidationTypeEnum.ZeroCheck:
                         logData.AddRange(sourceTable.ZeroValueCheck(validation.Field));
@@ -85,6 +85,9 @@ namespace FileMappingValidationTool.Logic.Validation
                         break;
                     case ValidationTypeEnum.GroupCheck:
                         logData.AddRange(sourceTable.GroupCheck(validation.Field, validation.IgnoreFields));
+                        break;
+                    case ValidationTypeEnum.DateTypeCheck:
+                        logData.AddRange(sourceTable.DataTypeCheck(validation.Field));
                         break;
                     default:
                         break;
