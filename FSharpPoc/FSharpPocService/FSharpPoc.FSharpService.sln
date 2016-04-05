@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpPoc.FSharpService", "FSharpPoc.FSharpService\FSharpPoc.FSharpService.fsproj", "{A2DE6B3C-CB93-4CAA-A306-2040ADF9C976}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpPoc.FSharpPocConsole", "..\FSharpPocConsole\FSharpPoc.FSharpPocConsole\FSharpPoc.FSharpPocConsole.fsproj", "{66D11BF2-673C-4A4B-8BE6-FDAE6C4089D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSharpPoc.CSharpConsole", "..\CSharpConsole\FSharpPoc.CSharpConsole\FSharpPoc.CSharpConsole.csproj", "{ACBF35E7-F111-456A-A9E6-FFFCD6DB6A79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A2DE6B3C-CB93-4CAA-A306-2040ADF9C976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2DE6B3C-CB93-4CAA-A306-2040ADF9C976}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2DE6B3C-CB93-4CAA-A306-2040ADF9C976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D11BF2-673C-4A4B-8BE6-FDAE6C4089D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D11BF2-673C-4A4B-8BE6-FDAE6C4089D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D11BF2-673C-4A4B-8BE6-FDAE6C4089D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D11BF2-673C-4A4B-8BE6-FDAE6C4089D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBF35E7-F111-456A-A9E6-FFFCD6DB6A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBF35E7-F111-456A-A9E6-FFFCD6DB6A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBF35E7-F111-456A-A9E6-FFFCD6DB6A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBF35E7-F111-456A-A9E6-FFFCD6DB6A79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
