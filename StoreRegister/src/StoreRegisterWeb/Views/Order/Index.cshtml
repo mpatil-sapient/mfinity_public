@@ -1,0 +1,13 @@
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@model StoreRegisterWeb.Models.Order.OrderForm
+
+<h1>Shopping bag for counter no: @Model.ShoppingCounter</h1>
+<form asp-action="Index">
+    <div class="shopping-bag">
+        <div asp-validation-summary="ValidationSummary.All" class="input-validation-error"></div>
+        <div>
+            <div>@Html.Partial("_ProductDropdown", @Model.Products) </div>
+        </div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
